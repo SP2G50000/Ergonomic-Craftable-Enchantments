@@ -68,7 +68,7 @@ const RECIPE_LIST: EnchantmentsRecipes = [
     ingredient: "echo_shard",
     level: 3,
   },
-  { //TODO: Finish this!
+  {
     id: "blast_protection",
     ingredient: "gunpowder",
   },
@@ -206,7 +206,7 @@ await Deno.writeTextFile(
     {
       "pack": {
         "description": "Balanced craftable enchantment recipes for Minecraft",
-        "pack_format": 61,
+        "pack_format": 71,
       },
     },
   ),
@@ -235,9 +235,7 @@ for (const recipe of RECIPE_LIST) {
     "id": "minecraft:enchanted_book",
     "components": {
       "minecraft:stored_enchantments": {
-        "levels": {
-          "minecraft:${recipe.id}": ${recipe.level ?? 1}
-        }
+        "minecraft:${recipe.id}": ${recipe.level ?? 1}
       }
     },
     "count": 1
